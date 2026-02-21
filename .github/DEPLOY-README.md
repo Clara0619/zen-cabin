@@ -1,9 +1,12 @@
 # 部署说明（GitHub Pages）
 
-1. 推送代码到 `main` 后，本 workflow 会自动把构建结果推到 **gh-pages** 分支。
-2. 在仓库 **Settings → Pages** 里：
-   - **Source** 选 **Deploy from a branch**
-   - **Branch** 选 **gh-pages**，文件夹选 **/ (root)**，保存。
-3. 等 1～2 分钟，访问：**https://clara0619.github.io/zen-cabin/**
+## 你只需要做一步
 
-若之前选的是 “GitHub Actions”，请改成 “Deploy from a branch” 并选 gh-pages。
+1. 打开：**https://github.com/Clara0619/zen-cabin/settings/pages**
+2. 在 **Build and deployment** 下面，找到 **Source**（来源）：
+   - 点一下 Source 右边的下拉框（可能现在写的是 “Deploy from a branch” 或 “None”）
+   - 在列表里选 **“GitHub Actions”**
+3. 不用选分支、不用选文件夹，直接等 1～2 分钟。
+4. 打开游戏：**https://clara0619.github.io/zen-cabin/**
+
+以后每次推送到 main，都会自动重新部署，网址不变。
