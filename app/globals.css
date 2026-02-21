@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --mario-sky: #6b8eff;
+  --zen-wood: #88b04b;
+  --zen-stone: #6b7b8c;
+  --zen-food: #f7cac9;
+  --zen-border: #0d0d0d;
+  --zen-brick: #b85c38;
+  --zen-brick-dark: #8b4513;
+}
+
+body {
+  font-family: "Press Start 2P", monospace;
+  font-size: 14px;
+  background-color: var(--mario-sky);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin: 0;
+}
+
+/* 游戏内 UI 字体整体放大 */
+.game-ui-text-xs { font-size: 0.75rem; }
+.game-ui-text-sm { font-size: 0.9rem; }
+.game-ui-text-base { font-size: 1rem; }
+.game-ui-text-lg { font-size: 1.15rem; }
+
+/* 8-bit 硬核：粗黑描边 + 无圆角 */
+.pixel-box {
+  border: 4px solid var(--zen-border);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--zen-border);
+}
+
+.pixel-box-8 {
+  border: 8px solid var(--zen-border);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--zen-border);
+}
+
+.pixel-btn {
+  border: 4px solid var(--zen-border);
+  border-radius: 0;
+  transition: transform 0.05s ease, box-shadow 0.05s ease, filter 0.05s ease;
+}
+
+/* 按下感：向右下偏移 2px + 反色闪烁 */
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--zen-border);
+  filter: invert(1);
+}
+
+/* 马里奥砖块纹理 */
+.brick-cell {
+  background-color: var(--zen-brick);
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 50%),
+    linear-gradient(90deg, var(--zen-brick-dark) 0%, transparent 4px),
+    linear-gradient(0deg, var(--zen-brick-dark) 0%, transparent 4px);
+  background-size: 100% 100%, 8px 100%, 100% 8px;
+}
+
+/* 像素白云 */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border: 4px solid var(--zen-border);
+  border-radius: 0;
+  image-rendering: pixelated;
+}
+
+.cloud-1 { width: 60px; height: 24px; top: 12%; left: 10%; }
+.cloud-2 { width: 48px; height: 20px; top: 25%; right: 15%; }
+.cloud-3 { width: 56px; height: 22px; bottom: 35%; left: 25%; }
+.cloud-4 { width: 44px; height: 18px; bottom: 20%; right: 30%; }
+
+/* 马里奥风格草地背景 */
+.grass-bg {
+  background-color: #5a9c47;
+  background-image:
+    linear-gradient(180deg, transparent 0%, transparent 94%, rgba(0,0,0,0.15) 95%, transparent 96%),
+    repeating-linear-gradient(
+      90deg,
+      #5a9c47 0px,
+      #5a9c47 4px,
+      #4a8c37 4px,
+      #4a8c37 8px
+    );
+  background-size: 100% 100%, 8px 100%;
+}
