@@ -1,12 +1,14 @@
 # 部署说明（GitHub Pages）
 
-## 你只需要做一步
+## 第一步：先选 GitHub Actions（必须）
 
 1. 打开：**https://github.com/Clara0619/zen-cabin/settings/pages**
-2. 在 **Build and deployment** 下面，找到 **Source**（来源）：
-   - 点一下 Source 右边的下拉框（可能现在写的是 “Deploy from a branch” 或 “None”）
-   - 在列表里选 **“GitHub Actions”**
-3. 不用选分支、不用选文件夹，直接等 1～2 分钟。
-4. 打开游戏：**https://clara0619.github.io/zen-cabin/**
+2. **Build and deployment** 里 **Source** 选 **“GitHub Actions”**（先做这一步，否则 deploy 会失败）。
+3. 保存后，到 **Actions** 里找到 “Deploy to GitHub Pages”，点 **Re-run all jobs**。
 
-以后每次推送到 main，都会自动重新部署，网址不变。
+## 第二步：看游戏
+
+打开：**https://clara0619.github.io/zen-cabin/**
+
+若 Actions 里显示 **build** 失败：看该 job 的红色报错（常见是 npm 或 next build）；已在本仓库关闭 build 时的 ESLint，一般再推一次即可。  
+若 **deploy** 失败：多半是没做第一步，去 Settings → Pages 选 GitHub Actions 后再 Re-run。
